@@ -1,18 +1,13 @@
 require_relative 'human'
 
-class Student
+class Student < Human
   include HighFiveable
 
-  attr_reader :age, :phase
-  attr_accessor :name
+  attr_reader :phase
 
   def initialize(options = {})
     @phase = 1
-    @age = options.fetch(:age, 0)
-    @name = options.fetch(:name, "")
   end
-
-
 
   def set_phase(num)
     response = ""
@@ -33,3 +28,4 @@ class Student
     response
   end
 end
+
